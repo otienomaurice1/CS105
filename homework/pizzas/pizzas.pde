@@ -1,18 +1,18 @@
 
 /* 
-Program: Pizza
-Author: Otieno Maurice
-Description: This code contains two functions pizza and pizza test
-             pizza takes in two parameters pizzaSize and PizzaNumber
-             it then uses the parameters to determine if  the pizza will be delivered cold or  hot
-             pizza returns 1 when hot and 0 when cold
-             When I order  a large pizza and 5 or less pizzas are ordered before me  wil get the pizza delivered hot
-             When I order  a small pizza and 2 or less pizzas are ordered before me  will get the pizza delivered hot
-            pizzaTest passes all possible arguments to pizza
-Date: 09/24/2023
-Contact: otienom@lafayette.edu
-Lab04
-*/
+ Program: Pizza
+ Author: Otieno Maurice
+ Description: This code contains two functions pizza and pizza test
+ pizza takes in two parameters pizzaSize and PizzaNumber
+ it then uses the parameters to determine if  the pizza will be delivered cold or  hot
+ pizza returns 1 when hot and 0 when cold
+ When I order  a large pizza and 5 or less pizzas are ordered before me  wil get the pizza delivered hot
+ When I order  a small pizza and 2 or less pizzas are ordered before me  will get the pizza delivered hot
+ pizzaTest passes all possible arguments to pizza
+ Date: 09/24/2023
+ Contact: otienom@lafayette.edu
+ Lab04
+ */
 
 void setup() {
   pizzaTest();   // call the pizzaTest function
@@ -20,36 +20,62 @@ void setup() {
 
 int pizza (char pizzaSize, int pizzaNumber) {   // declare the pizza function header
 
-  if (pizzaSize == 'l') {    // check pizza size
-    if (pizzaNumber <= 5) {   // check number of pizzas orderd before me
+  if (( pizzaNumber < 0)) {
+    println("Error! invalid number of  pizzas.\n please try again");  // print an error if i key in invalid character
+    return -1;                                                        // return -1 for errors
+  } else if ((pizzaSize != 'l') && (pizzaSize != 's')) {
+    println("Error! invalid  size of pizzas.\n please try again");
+    return -1;
+  } else if (pizzaSize == 'l') {    // check pizza size
+    if (pizzaNumber <= 5 && pizzaNumber >0) {   // check number of pizzas orderd before me
       return 1;
     } else {
       return 0;
     }
   } else if (pizzaSize == 's') {     // check pizza size
-    if ( pizzaNumber  <= 2) {         // check number of pizzas orderd before me
+    if ( pizzaNumber  <= 2 && pizzaNumber >0) {         // check number of pizzas orderd before me
       return 1;
     } else {
       return 0;
     }
   }
-  return 0;   // default return statement
+  return -1;
 }
 
 
 void pizzaTest() {
-   //case1
-char test1size = 'l';  int test1Number = 10;  int test1Expected = 0;  // when it is large and 10 pizzas are ordered before me
+  //case1
+  char test1size = 'l';  
+  int test1Number = 10;  
+  int test1Expected = 0;  // when it is large and 10 pizzas are ordered before me
   //case2
-  char test2size = 'l';   int test2Number = 5;  int test2Expected = 1; // when it is large and 5 pizzas are ordered before me
- // case 3 
-  char test3size = 'l';   int test3Number = 2;  int test3Expected = 1; // when it is large and 2 pizzas are ordered before me
-// case4  
-  char test4size = 's';   int test4Number = 2;  int test4Expected = 1; // when it is small and 2 pizzas are ordered before me
- // case5 
-  char test5size = 's';   int test5Number = 1;  int test5Expected = 1;  // when it is small and 1 pizza is ordered before me
+  char test2size = 'l';   
+  int test2Number = 5;  
+  int test2Expected = 1; // when it is large and 5 pizzas are ordered before me
+  // case 3 
+  char test3size = 'l';   
+  int test3Number = 2;  
+  int test3Expected = 1; // when it is large and 2 pizzas are ordered before me
+  // case4  
+  char test4size = 's';   
+  int test4Number = 2;  
+  int test4Expected = 1; // when it is small and 2 pizzas are ordered before me
+  // case5 
+  char test5size = 's';   
+  int test5Number = 1;  
+  int test5Expected = 1;  // when it is small and 1 pizza is ordered before me
   // casee 6
-  char test6size = 's';   int test6Number = 5;  int test6Expected = 0;  // when it is small and 5 pizzas are ordered before meed before me
+  char test6size = 's';   
+  int test6Number = 5;  
+  int test6Expected = 0;  // when it is small and 5 pizzas are ordered before me
+  // case 7
+  char test7size = 'k';   
+  int test7Number = 1;  
+  int test7Expected = -1;  // when i key in an invalid size of pizzas
+  // case 8
+  char test8size = 's';   
+  int test8Number = -1;  
+  int test8Expected = -1;  // when it is small and 0 pizzas are ordered before me
 
 
 
@@ -93,5 +119,17 @@ char test1size = 'l';  int test1Number = 10;  int test1Expected = 0;  // when it
     println("Test 6 passed");
   } else {
     println("Test 6 failed");
+  }
+  //test7
+  if (pizza( test7size, test7Number) == test7Expected) {
+    println("Test 7 passed");
+  } else {
+    println("Test 7 failed");
+  }
+  //test8
+  if (pizza( test8size, test8Number) == test8Expected) {
+    println("Test 8 passed");
+  } else {
+    println("Test 8 failed");
   }
 }
