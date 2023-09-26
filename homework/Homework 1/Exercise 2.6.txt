@@ -1,0 +1,18 @@
+// Exercise 1.6: in this section i first outlined the error then gave the correct code later
+
+// RAW CODE
+size(200, 200;     // - no right parenthesis
+background();      // - no argument has been passed to function
+stroke 255;        // - argument is not enclosed in parenthesis
+fill(150)          // - statement not terminated by semi colon
+rectMode(center);   // -The mode is not not defined in UPPERCASE letters
+rect(100, 100, 50);  //- inadequate number of arguments passed found 3 instead of four
+
+// CORRECTED CODE
+size(200, 200); 
+background();
+stroke (255); 
+fill(150) ;
+rectMode(CENTER); 
+rect(100, 100, 50, 100); 
+

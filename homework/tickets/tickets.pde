@@ -17,12 +17,12 @@ int tickets ( int numOfFriends) {    // declare the function tickets and have it
     println("Illegal number of tickets! Number of friends can't be negative.\nPlease Try again"); //if number of friends is negative print an error message and return -1
     return -1;
   } else {
-    return numOfFriends;
+    return numOfFriends*2+1;
   }
 }
 void ticketsTest() {
   int test1 = -20, test2 = 20;                 // declare and initialize test variables  test1 and test2 for ticket numbers
-  int test1Expected = -1, test2Expected = 20; // declare and initialize expected variables 
+  int test1Expected = -1, test2Expected = 41; // declare and initialize expected variables 
   if (tickets(test1) == test1Expected) { // check if the reeturn values of the ticket function are similar to the expected values
     println("  Test 1 passed:  The tickets function is working properly");
   } else {

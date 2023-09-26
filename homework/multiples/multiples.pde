@@ -32,6 +32,7 @@ void multiplesTest() {
   //case 6
   int test6num = 4, test6StartRange = 50, test6EndRange = 100, test6count = 12 ;
   // case 7
+  int test7num = 0, test7StartRange = 0, test7EndRange = 0, test7count = 1;
 
   if ( multiples(test1num, test1StartRange, test1EndRange) == test1count) {
     println("Test 1 passed");
@@ -67,7 +68,10 @@ if ( multiples(test6num, test6StartRange, test6EndRange) == test6count) {
   } else { 
     println( "Test 6 failed");
   }
-  
+   if ( multiples(test7num, test7StartRange, test7EndRange) == test7count) {  // test for the multiple of zero
+    println("Test 8 passed");
+  } else { 
+    println( "Test 8 failed");}
 }
 
 void setup(){
