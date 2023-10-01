@@ -6,7 +6,7 @@ Contact:otienom@lafayette.edu*/
 
 
 
-int fillcolor, strokecolor, transparency = 200, numberOfStars = 50;
+int fillcolor, strokecolor, transparency = 10, numberOfStars = 50;
 int xCoordinate = 350, yCoordinate = 350;
 void setup() {
   size(700, 700);
@@ -15,14 +15,21 @@ void setup() {
   float largeStarRadius = 300;
   float offset_inner, offset_outer;
 offset_inner = offset_outer = largeStarRadius/numberOfStars;
-
+float inner_radius =10, outer_radius = 50; int  numberOfPoints= 8; 
 
   for (int i = 1; i <= numberOfStars; i++) {
-      float inner_radius =30, outer_radius = 50; 
-    star(xCoordinate, yCoordinate, inner_radius, outer_radius, 8);  // draw the star
-   /* fillcolor += (255/numberOfStars);
-    strokecolor -= (255/numberOfStars);*/
-     inner_radius += offset_inner;outer_radius += offset_outer; // update the value of inner and outer radius
+      
+     pushMatrix();
+     translate(0,0);
+      rotate(radians(0));
+    star(xCoordinate, yCoordinate, inner_radius, outer_radius, numberOfPoints);  // draw the star
+    fillcolor += (255/numberOfStars);
+    strokecolor -= (255/numberOfStars);
+   
+    popMatrix();
+    
+     outer_radius = outer_radius + offset_outer; // update the value of outer radius
+     inner_radius = inner_radius + offset_inner; // update the value of inner radius
   }
 }
 
