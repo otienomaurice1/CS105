@@ -6,30 +6,42 @@ Contact:otienom@lafayette.edu*/
 
 
 
-int fillcolor, strokecolor, transparency = 10, numberOfStars = 50;
-int xCoordinate = 350, yCoordinate = 350;
+int fillcolor = 0;
+int strokecolor = 255;
+int transparency = 5;
+int numberOfStars = 50;
+int xCoordinate = width/2;
+int yCoordinate = height/2;
+
 void setup() {
-  size(700, 700);
+  size(1000, 1000);
   background(2);
+  float widthOfMandala = 600;
+  int  numberOfPoints= 8; 
+ 
+mandala(xCoordinate,yCoordinate,widthOfMandala,numberOfPoints,numberOfStars );
 
-  float largeStarRadius = 300;
-  float offset_inner, offset_outer;
-offset_inner = offset_outer = largeStarRadius/numberOfStars;
-float inner_radius =10, outer_radius = 50; int  numberOfPoints= 8; 
+}
+void mandala(float x, float y, float sWidth, int nPoint, int steps) {
+  float largest_radius = sWidth/2;
+  float outer_radius = largest_radius;
+ float inner_radius = outer_radius *0.7;
 
-  for (int i = 1; i <= numberOfStars; i++) {
-      
+ int offset_outer = (int) largest_radius/steps;  
+  int    rotateAngle = 1;
+ 
+  for (int i = 1; i <= steps; i++) {
      pushMatrix();
-     translate(0,0);
-      rotate(radians(0));
-    star(xCoordinate, yCoordinate, inner_radius, outer_radius, numberOfPoints);  // draw the star
-    fillcolor += (255/numberOfStars);
-    strokecolor -= (255/numberOfStars);
-   
-    popMatrix();
+     translate(height/2,width/2);
+      rotate(radians(rotateAngle)); 
+    star(x, y, inner_radius,outer_radius, nPoint);  // draw the star
+    fillcolor += (255/steps); // update fill color
+    strokecolor -= (255/steps); //update stroke color
+   popMatrix();
     
-     outer_radius = outer_radius + offset_outer; // update the value of outer radius
-     inner_radius = inner_radius + offset_inner; // update the value of inner radius
+     outer_radius = outer_radius -offset_outer; // update the value of outer radius
+     inner_radius = outer_radius*0.7;
+     rotateAngle += 1;
   }
 }
 
@@ -47,8 +59,7 @@ void star(float x, float y, float inR, float outR, int nPoint) {
     float xpoint2 = x+ cos(midAngle+currentAngle)*inR; // x coordinate of second vertex
     float ypoint2 = y+sin (midAngle+currentAngle)*inR;// y coordinate of second vertex
 
-    fillcolor = 100; 
-    strokecolor = 255;  // initialize stroke and fill values
+  
     fill(fillcolor, transparency);   // set the color 
     stroke(strokecolor);
 
