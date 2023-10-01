@@ -19,7 +19,7 @@ Project: Mandala
 
 int fillcolor = 0;                   // declare and initialize initial fill color
 int strokecolor = 255;               // declare and initialize initial stroke color
-int transparency = 5;                // declare and initialize transparency
+int transparency = 100;                // declare and initialize transparency
 int numberOfStars = 50;
 int xCoordinate = width/2;           // declare the x coordinate of center of mandala
 int yCoordinate = height/2;          // declare the y coordinate of center of mandala
