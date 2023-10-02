@@ -66,8 +66,8 @@ void star(float x, float y, float inR, float outR, int nPoint) {
 
   beginShape();
   for (float currentAngle = 0; currentAngle <= (2*PI); currentAngle += rotateAngle) { // declare the current angle 
-    float xpoint1 = x+ cos(currentAngle)*outR;            // x coordinate of first vertice
-    float ypoint1 = y +sin(currentAngle)*outR;            // x coordinate of first vertice
+    float xpoint1 = x+ cos(currentAngle)*outR;            // x coordinate of first vertex
+    float ypoint1 = y +sin(currentAngle)*outR;            // x coordinate of first vertex
     float xpoint2 = x+ cos(midAngle+currentAngle)*inR;    // x coordinate of second vertex
     float ypoint2 = y+sin (midAngle+currentAngle)*inR;    // y coordinate of second vertex
 
