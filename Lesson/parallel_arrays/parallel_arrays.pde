@@ -22,8 +22,8 @@ String highestPaidEmployee( String [] names, int [] Salaries) {
   int highest = 0;          // initialize highest salary with 0
   for (int i = 0; i <= Salaries.length-1; i++) { // loop through array 
     if (i+1 == Salaries.length) {
-      break;
-    }           // prevent an indexOutOfBoundsException
+      break;  // prevent an indexOutOfBoundsException
+    }           
     else if ( Salaries[i] > Salaries[i+1]) {      // check if current salary is greaterthan next salary
       highest = Salaries[i];                     // if it is update value of highest salary to the current salary
     }
