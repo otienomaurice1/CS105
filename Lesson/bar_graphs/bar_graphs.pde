@@ -8,16 +8,27 @@ void setup() {
   // extractHeightData(lines);
 }
 void barGraphs(int [] heights, String [] names) {
-
+ int red = 10,green = 220, color_offset = 220/heights.length;
   for (int i =0; i<heights.length; i++) {
+    int z = width-40;
     rectMode(CORNER);
-    int widthOfBars = width/heights.length;
+    int widthOfBars = z/heights.length;
     int x=i*widthOfBars;
     int barHeight = heights[i];
-    int text_offset = 20;
-    rect(x, height-(text_offset+barHeight), widthOfBars, barHeight);
-    text(names[i], x, height-(text_offset/2));
+    int text_offset = 35;
+   
+    fill(red,green,100);
+    rect(x+20, height-(text_offset+barHeight), widthOfBars, barHeight);
+    fill(0,0,255);
+    text(names[i], x+20, height-(text_offset/2));
+    red=i*color_offset;
+    green-=color_offset;
   }
+  stroke(255,265,0);
+  line(20,height-35,width,height-35);
+  line(20,0,20,height-35);
+
+  
 }
 
 int [] extractHeightData(String [] heights) {
