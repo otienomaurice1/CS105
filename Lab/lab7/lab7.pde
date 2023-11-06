@@ -1,30 +1,31 @@
 /*Author: Otieno Maurice
  //-----------------------------------------------------------------------------------------------------------------------------------------
- Project Descripotion: This Sketch draws barGraphs and displays images as per data in the sketch
+ Project Description: This Sketch draws bar Graphs and displays images as per data in the sketch
  The data in this sketch represent the information for all the English Premier League clubs for the 2023/2024 season
  We would like to represent this information graphically using bar graphs
  The information is divided into 
  We first load all the images inside setup. We then sort the images to the category they represent 
- The categories are the clubs logo, the club captain and the club's best player
- Next we load all the stringd in the csv file as an array of strings
+ The categories are the club’s logo, the club captain and the club's best player
+ Next, we load all the information in the csv file as an array of strings
  We then create several functions to manipulate these strings
  There are a total of 19 functions 
  The first is setup - configure the initial values and all loaded information
- The second, draw - calls functions that draw the immage depending on the mouse's position
+ The second, draw - calls functions that draw the image depending on the mouse's position
  draw also calls keyPressed and refreshes the background
- draw accesses the team name,logoimage,captain name, captain image , best player name and best player image
+ draw accesses the team’s name, logoi mage, captain name, captain’s image, best player name and best player image
  it then passes this information to functions that display the corresponding data
- Each team has a unique logo, captain and bestPlayer,However the team captain may also be the best Player 
+ Each team has a unique logo, captain and best Player. However, the team captain may also be the best Player 
  Only the information for one team can be displayed at a given time
  The third keyPressed - calls functions that draw the bar graphs based on a key pressed by the user
- if the user presse W - win data should be graphed
- if the user presse L - Loss data should be graphed
- if the user presse D - draw data should be graphed
- if the user presse I - Indiscipline data should be graphed
- if the user presse S - Goals scored data should be graphed
- if the user presse C - Goals conceeded should be graphed
- if the user presse F - Goal difference data should be graphed
- if nothing is pressed or any other key is preessed the data for number odf points should be graphed
+ if the user presses W - win data should be graphed
+ if the user presses L - Loss data should be graphed
+ if the user presses D - draw data should be graphed
+ if the user presses I - Indiscipline data should be graphed
+ if the user presses S - Goals scored data should be graphed
+ if the user presses C - Goals conceded should be graphed
+ if the user presses F - Goal difference data should be graphed
+ if nothing is pressed or any other key is pressed the data for number of points should be graphed
+ 
  /-------------------------------------------------------------------------------------------------------------------------------------------
  Contact: otienom@lafayette.edu
  Date:11/05/2023
