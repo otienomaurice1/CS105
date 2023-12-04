@@ -1,3 +1,6 @@
+//declare an array of images to give the background of each tab
+//each tab may share a background or may have a different background
+//this background are stored in the baackground_images array
 PImage [] background_images;
 
 
@@ -12,15 +15,15 @@ void setup() {
  
   //declare variable for the number of panes needed
   //this will determine the number of colums and rows per page
-  int number_of_panes = 4;
+  int number_of_panes = 49;
   
   //declare variable to hold number of colums and initialize it
   int number_of_columns; 
-  number_of_columns = 0;
+  number_of_columns = 7;
  
   //declare variable to hold number of rows and initialize it
   int number_of_rows; 
-  number_of_rows = 2;
+  number_of_rows = 0;
   
   // declare variables to determine the pane's x and y positions and initialize them 
   float paneX_position = 0;
@@ -32,23 +35,23 @@ void setup() {
  
   //determine the number of colums and rows
   if (number_of_panes < number_of_rows) {
-    number_of_columns =1;
-    number_of_rows = number_of_panes;
+    number_of_rows =1;
+    number_of_columns = number_of_panes;
   } else {
-    number_of_columns += 1; 
-    while ( number_of_panes> number_of_rows) {
-      number_of_columns++;
-      number_of_panes-=number_of_rows;
+    number_of_rows += 1; 
+    while ( number_of_panes> number_of_columns) {
+      number_of_rows++;
+      number_of_panes-=number_of_columns;
     }
   }
 
   //determine the width and height of panes
-  widthOfPanes = width/number_of_rows;
-  heightOfPanes = height/number_of_columns;
+  widthOfPanes = width/number_of_columns;
+  heightOfPanes = height/number_of_rows;
   //draw the panes 
-  for (int i = 0; i < number_of_columns; i++) {
+  for (int i = 0; i < number_of_rows; i++) {
 
-    for (int j = 0; j < number_of_rows; j++) {
+    for (int j = 0; j < number_of_columns; j++) {
 
       //determine x and y positions of each pane
       paneX_position = j* widthOfPanes;
@@ -74,13 +77,17 @@ public int which_Pane() {
 // this method checks which half of the pane the mouse is at
 //it returns true if the mouse is on the left of the pane 
 //returns false if the mouse is  on the right of the pane
-public boolean which_half () {
+public boolean which_half() {
+  //declare a boolean value that determines whether the mouse is on the left half of a particular pane
+  //its true if it is on the left and false if on the right
   boolean leftHalf =true;
   return leftHalf;
 }
 
 //this method loads the images displayed
 //provides the background image to be dispayed in a certain pane
-
 public void display(PImage[] backgroundImage) {
+  //declarea local variable to hold the string of selected image
+  //this method uses the value returned from the which pane method
+  
 }
