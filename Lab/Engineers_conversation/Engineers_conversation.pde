@@ -1,7 +1,31 @@
+//-----------global variables---------------------------------
 //declare an array of images to give the background of each tab
 //each tab may share a background or may have a different background
 //this background are stored in the baackground_images array
 PImage [] background_images;
+
+//declare variable for the number of panes needed
+  //this will determine the number of colums and rows per page
+  int number_of_panes = 12;
+  
+  //declare variable to hold number of colums and initialize it
+  int number_of_columns = 3; 
+ 
+ 
+  //declare variable to hold number of rows and initialize it
+  int number_of_rows =0; 
+
+  
+  // declare variables to determine the pane's x and y positions and initialize them 
+  float paneX_position = 0;
+  float paneY_position = 0;
+ 
+  //declare variables for width and height of panes
+  int widthOfPanes;
+  int heightOfPanes;
+  //
+  int paneArray [] [] = new int [number_of_rows][number_of_columns];
+//-------------------------------------------------------------------
 
 
 //this method provides the default set up of the screen 
@@ -12,26 +36,6 @@ void setup() {
  
   //declare the window background
   background(0);
- 
-  //declare variable for the number of panes needed
-  //this will determine the number of colums and rows per page
-  int number_of_panes = 49;
-  
-  //declare variable to hold number of colums and initialize it
-  int number_of_columns; 
-  number_of_columns = 7;
- 
-  //declare variable to hold number of rows and initialize it
-  int number_of_rows; 
-  number_of_rows = 0;
-  
-  // declare variables to determine the pane's x and y positions and initialize them 
-  float paneX_position = 0;
-  float paneY_position = 0;
- 
-  //declare variables for width and height of panes
-  int widthOfPanes;
-  int heightOfPanes;
  
   //determine the number of colums and rows
   if (number_of_panes < number_of_rows) {
@@ -70,6 +74,12 @@ public void draw() {
 
 // this method checks which pane the mouse is in
 public int which_Pane() {
+  for (int i = 0; i < number_of_rows; i++) {
+
+    for (int j = 0; j < number_of_columns; j++) {
+      
+    }
+
   return 1;
 }
 
@@ -77,7 +87,7 @@ public int which_Pane() {
 // this method checks which half of the pane the mouse is at
 //it returns true if the mouse is on the left of the pane 
 //returns false if the mouse is  on the right of the pane
-public boolean which_half() {
+ public boolean which_half() {
   //declare a boolean value that determines whether the mouse is on the left half of a particular pane
   //its true if it is on the left and false if on the right
   boolean leftHalf =true;
