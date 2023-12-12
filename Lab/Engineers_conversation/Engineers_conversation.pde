@@ -24,17 +24,49 @@ int heightOfPanes;
 float pane[] [] = new float [12][2];
 
 //-------------------------------------------------------------------
+PApplet p ;
+softwareEngineer soft;
+hardwareEngineer hard;
+Engineers_conversation Hard;
+
+int x;
+int y;
+
+
+
+
+
+
+
+
+
+
+
+
+//---------------------------------------------------------------------
+
+
+
 void setup () {
+  soft  = new softwareEngineer( 333,250,this);
+  hard  = new hardwareEngineer( 333,750,this);
+  Hard  = new Engineers_conversation( 333,500);
+
   //declare the window size
   size(1000, 1000);
   //declare the window background
   background(0);
   display1();
+    soft.display();
+    hard.display();
+    Hard.display();
   fill(1);
-  text(which_Pane(333.0, 750.0), 250, 210);
+ // text(which_Pane(333.0, 750.0), 250, 210);
   //println(which_Pane());
 }
-
+Engineers_conversation(int x, int y){
+  this.x = x;
+  this.y = y;}
 //this method provides the default set up of the screen 
 void display1() {
   // declare variables to determine the pane's x and y positions and initialize them 
@@ -77,7 +109,7 @@ public void draw() {
 
 
 // this method checks which pane the mouse is in
-public int which_Pane(float x, float y) {
+/*public int which_Pane(float x, float y) {
   // declare variables to determine the pane's x and y positions and initialize them 
   float paneX_position = 0;
   float paneY_position = 0;
@@ -115,8 +147,8 @@ public int which_Pane(float x, float y) {
       return i;
     }
   }
-  return 0;
-}
+  return -1;
+}*/
 // this method checks which half of the pane the mouse is at
 //it returns true if the mouse is on the left of the pane 
 //returns false if the mouse is  on the right of the pane
@@ -129,7 +161,11 @@ public boolean which_half() {
 
 //this method loads the images displayed
 //provides the background image to be dispayed in a certain pane
-public void display(PImage[] backgroundImage) {
+public void display(/*PImage[] backgroundImage, int k*/) {
+  stroke(0,0,200);
+   strokeWeight(2);
+    rect(x,y,100,20);
+     rect(x,y,120,200);
   //declarea local variable to hold the string of selected image
   //this method uses the value returned from the which pane method
 }
