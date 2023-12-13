@@ -10,8 +10,8 @@ int y;
 
 //declare variable for the number of panes needed
 //this will determine the number of colums and rows per page
-int number_of_panes = 12;
-int l = 12;
+int number_of_panes = 13;
+int l = 13;
 
 //declare variable to hold number of colums and initialize it
 int number_of_columns = 3; 
@@ -63,7 +63,7 @@ void display() {
   display1();
   //---------
   for (int i = 0; i < soft.length; i++) {
-    soft[i]  =  new softwareEngineer( pane[i][0],pane[i][1], this);
+    soft[i]  =  new softwareEngineer( pane[i][0], pane[i][1], this);
     hard[i]   = new hardwareEngineer( pane[i][0]+half_widthOfPanes, pane[i][1], this);
   } 
   for (int i = 0; i < soft.length; i++) {
@@ -79,7 +79,7 @@ void display() {
 // this method checks which pane the mouse is in
 public int which_Pane(float x, float y) {
 
-for (int i = 0; i < soft.length; i++) {
+  for (int i = 0; i < soft.length; i++) {
     if (i+3 < number_of_panes ) {
       if ( (x< pane[i+1][0]&& x>= pane[i][0]) && (y < pane[i+3][1])) {
         println(i); 
@@ -92,7 +92,7 @@ for (int i = 0; i < soft.length; i++) {
       println(i); 
       return i;
     }
-}
+  }
 
 
   return -1;
@@ -136,6 +136,7 @@ public void display1(/*PImage[] backgroundImage, int k*/) {
   widthOfPanes = width/number_of_columns;
   heightOfPanes = height/number_of_rows;
   half_widthOfPanes = widthOfPanes/2;
+  //----
 
   //draw the panes 
   for (int i = 0; i < number_of_rows; i++) {
@@ -151,9 +152,7 @@ public void display1(/*PImage[] backgroundImage, int k*/) {
     }
   }
   //----
-  //determine the width and height of panes
   int k = 0;
-  //-----------------------------------------------------------------------------------
   for (int i = 0; i < number_of_rows; i++) {
 
     for (int j = 0; j < number_of_columns; j++) {
@@ -174,3 +173,5 @@ public void display1(/*PImage[] backgroundImage, int k*/) {
   //this method uses the value returned from the which pane method
 }
 //-----------------------------------------------------------------------------------------------------
+void speak() {
+}
