@@ -11,7 +11,7 @@ public class softwareEngineer extends Engineers_conversation {
   softwareEngineer() {
  //  this(0,0,k);
   }
-
+  
   //declare a seconadry constructor
   //this constructor gets the x and y position of the software engineer  
   //depending on the pane in which we want to draw him
