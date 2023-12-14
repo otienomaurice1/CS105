@@ -148,6 +148,7 @@ public void display1(/*PImage[] backgroundImage, int k*/) {
       paneY_position = i* heightOfPanes;
       //draw each pane
       rectMode(CORNER);
+      stroke(200,200,200);
       rect(paneX_position, paneY_position, widthOfPanes, heightOfPanes);
     }
   }

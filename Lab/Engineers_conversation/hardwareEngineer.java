@@ -14,11 +14,12 @@ public class hardwareEngineer extends Engineers_conversation {
    this.p =p;
     this.x = x;
     this.y = y;
-  }
+  } 
 
   //declare the display method
   //this method displays the physical features of the engineer 
   public void display() {
+    backgroundl();
      body();
     head();
     eyes();
@@ -113,5 +114,16 @@ public class hardwareEngineer extends Engineers_conversation {
     p.noFill();
   } 
   //----------------------------------------------------------------------------------------
+   void backgroundl(){
+    p.fill(0);
+    p.stroke(0);
+    p.rectMode(CORNER);
+    p.rect(x,y,250,200);
+    for(int i =0; i<500;i++){
+    p.stroke(255,255,0);
+    p.point(x+p.random(0,250),y+p.random(150));}
+    p.noFill();
+    p.noStroke();
+  }
   
 }
