@@ -116,14 +116,16 @@ public class hardwareEngineer extends Engineers_conversation {
   //----------------------------------------------------------------------------------------
    void backgroundl(){
     p.fill(0);
-    p.stroke(0);
+    p.strokeWeight(12);
+    p.stroke(1);
     p.rectMode(CORNER);
-    p.rect(x,y,250,200);
+    p.rect(x+1,y+1,250,200);
     for(int i =0; i<500;i++){
-    p.stroke(255,255,0);
-    p.point(x+p.random(0,250),y+p.random(150));}
+    p.stroke(255,25,100);
+    p.strokeWeight(2);
+    p.point(x+p.random(0,250),y+p.random(150));
     p.noFill();
     p.noStroke();
   }
-  
+   }
 }
