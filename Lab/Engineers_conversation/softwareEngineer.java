@@ -36,18 +36,23 @@ public class softwareEngineer extends Engineers_conversation {
   //declare the display method
   //this method displays the physical features of the engineer 
   public void display() {
+    body();
     head();
     eyes();
-    body();
+    
   }
   // this methd displays the text to be displayed when the mouse hovers over the hardware engineer
   //it receives a string from the arrayWords method and displays it
   public void speak( int engineer1_words) {
-    String s = arrayWords(engineer1_words);
-    p.fill(255, 0, 0);
+     String s = arrayWords(engineer1_words);
+     p.fill(255);
+     p.ellipseMode(CORNER);
+     p.ellipse(x+40,y+20,200,70);
+     p.ellipseMode(CENTER);
+    p.fill(255,0,0);
     p.textSize(12);
-    p.text( s, x+50, y+10);
-    p.fill(255);
+   p.text( s,x+50,y+55);
+   p.fill(255);
   }
   //-------------------------------------------------------------------------------------
 
@@ -60,7 +65,7 @@ public class softwareEngineer extends Engineers_conversation {
   public String arrayWords(int n) {
 
     //declare an array of words to be spoken by the software engineer
-    String [] speech = {" HEr", "Hers", "himself", "herself", "themselves"};
+    String [] speech = {"Hi, I am a software engineer", "Hers", "himself", "herself", "Hi, I am a software engineer"};
 
     //declare variable to hold the specific word we want to access
     //we will get hte specific word we want to access by looping through the array
@@ -118,12 +123,10 @@ public class softwareEngineer extends Engineers_conversation {
   //it receives two parameters, the x and y locations of the mouse
   // it uses these the x and y locations passed into it to determine where to draw the body
   private void body () {
-    p.stroke(0, 0, 200);
+    p.stroke(0);
     p.strokeWeight(2);
-    p.fill(255, 0, 255);
-   // p.ellipseMode(CENTER);
-    print( heightofpanes);
-    p.arc(x+50, (y+200), 70, 50, 0, PI+QUARTER_PI, CHORD);
+    p.fill(106,93,93);
+    p.arc(x+offsetx, y+(offsety+80),offsety-25, offsety+10, PI,2*PI);
     p.noFill();
   } 
   //----------------------------------------------------------------------------------------
